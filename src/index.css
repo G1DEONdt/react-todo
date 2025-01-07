@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.list-item {
+  @apply h-14 w-full bg-zinc-800 shadow-[inset_0px_0px_4px_4px_rgba(0,0,0,0.2)] rounded-xl text-zinc-50 text-xl flex justify-between items-center px-6;
+}
+
+.todo-item {
+  @apply w-full bg-zinc-700 rounded-xl px-12 py-6 flex justify-between shadow-custom text-xl;
+}
