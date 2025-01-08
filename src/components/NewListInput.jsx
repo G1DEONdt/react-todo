@@ -1,8 +1,10 @@
-import { useState } from "react";
-import Collection from "./Collection";
+import { useContext, useState } from "react";
+import Collection from "../data/Collection";
+import { ListContext } from "../App";
 
 export default function NewListInput(props) {
   const [title, setTitle] = useState("");
+  const { lists, setLists, setSelectedList } = useContext(ListContext);
 
   function handleAdd() {
     let newList;
@@ -13,9 +15,11 @@ export default function NewListInput(props) {
       newList = Collection(title);
     }
 
-    props.setLists([...props.lists, newList]);
+    setLists((prevList) => [...prevList, newList]);
+    setSelectedList(lists.length);
     props.setCreatingNewList(false);
   }
+
   return (
     <div className="w-full flex items-center relative text-zinc-50">
       <input

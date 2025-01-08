@@ -3,21 +3,46 @@ import { IoIosClose } from "react-icons/io";
 import { ListContext } from "../App";
 
 export default function List(props) {
-  const { lists, setLists } = useContext(ListContext);
+  const { lists, setLists, selectedList, setSelectedList } =
+    useContext(ListContext);
+
+  function selectList() {
+    setSelectedList(props.index);
+  }
 
   function deleteList() {
+    if (lists.length <= 1) {
+      return;
+    }
+
     setLists((l) => {
       let arr = [...l];
       arr.splice(props.index, 1);
       return arr;
     });
+
+    if (selectedList > 0) {
+      setSelectedList(selectedList - 1);
+    } else {
+      setSelectedList(selectedList);
+    }
   }
   return (
-    <div className="list-item">
+    <button
+      onClick={selectList}
+      className={
+        selectedList === props.index ? "list-item selected" : "list-item"
+      }
+    >
       <p>{props.title}</p>
-      <button onClick={deleteList}>
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+          deleteList();
+        }}
+      >
         <IoIosClose size={32} />
-      </button>
-    </div>
+      </span>
+    </button>
   );
 }
