@@ -7,6 +7,12 @@ export default function AddTodoButton() {
   const [title, setTitle] = useState("");
   const { lists, setLists, selectedList } = useContext(ListContext);
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      addTodo();
+    }
+  }
+
   function addTodo() {
     const newTodo = Todo(title);
     lists[selectedList].todos.push(newTodo);
