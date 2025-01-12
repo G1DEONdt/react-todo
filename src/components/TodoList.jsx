@@ -57,7 +57,7 @@ export default function TodoList() {
       )}
 
       <hr></hr>
-      <div className="flex flex-col gap-6 w-full h-4/6 overflow-auto hide-scrollbar ">
+      <div className="flex flex-col gap-6 w-full h-4/6 overflow-auto hide-scrollbar px-2">
         {lists[selectedList]?.todos.map((todo, index) => {
           return <Todo key={index} title={todo.title} index={index} />;
         })}

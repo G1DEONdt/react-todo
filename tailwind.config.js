@@ -6,6 +6,15 @@ export default {
       boxShadow: {
         custom: "4px 4px 4px 2px black",
       },
+      keyframes: {
+        radialPulse: {
+          "0%": { transform: "scale(0)", opacity: "0.8" },
+          "100%": { transform: "scale(100)", opacity: "0" },
+        },
+      },
+      animation: {
+        "pulse-radial": "radialPulse 1s linear",
+      },
     },
   },
   plugins: [

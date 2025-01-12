@@ -18,7 +18,7 @@ export default function ListCollection() {
         })}
       </div>
       {creatingNewList ? (
-        <NewListInput setCreatingNewList={setCreatingNewList} />
+        <NewListInput setCreatingNewList={setCreatpningNewList} />
       ) : (
         <NewListButton setCreatingNewList={setCreatingNewList} />
       )}
