@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .list-item {
-  @apply h-14 w-full bg-zinc-800 rounded-xl text-zinc-50 text-xl flex justify-between items-center px-6;
+  @apply w-full bg-zinc-800 rounded-xl text-zinc-50 text-xl flex justify-between items-center px-6 py-4;
 }
 
 .list-item.selected {

@@ -60,7 +60,9 @@ export default function List(props) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="bg-transparent rounded-md text-white px-2"
-            onBlur={updateTitle}
+            onBlur={() => {
+              updateTitle();
+            }}
           ></input>
           <button
             onClick={updateTitle}

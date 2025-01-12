@@ -50,13 +50,18 @@ export default function TodoList() {
           className="px-4 py-2 rounded-lg bg-zinc-700 text-zinc-50 text-xl"
           autoFocus
           onKeyDown={handleKeyDown}
+          onBlur={() => {
+            updateTitle();
+          }}
         ></input>
       )}
 
       <hr></hr>
-      {lists[selectedList]?.todos.map((todo, index) => {
-        return <Todo key={index} title={todo.title} index={index} />;
-      })}
+      <div className="flex flex-col gap-6 w-full h-4/6 overflow-auto hide-scrollbar ">
+        {lists[selectedList]?.todos.map((todo, index) => {
+          return <Todo key={index} title={todo.title} index={index} />;
+        })}
+      </div>
       <AddTodoButton />
     </>
   );

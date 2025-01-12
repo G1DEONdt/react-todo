@@ -6,6 +6,12 @@ export default function NewListInput(props) {
   const [title, setTitle] = useState("");
   const { lists, setLists, setSelectedList } = useContext(ListContext);
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      handleAdd();
+    }
+  }
+
   function handleAdd() {
     let newList;
 
@@ -29,13 +35,17 @@ export default function NewListInput(props) {
         onChange={(e) => {
           setTitle(e.target.value);
         }}
+        onKeyDown={handleKeyDown}
+        onBlur={() => {
+          props.setCreatingNewList(false);
+        }}
       ></input>
-      <button
+      {/* <button
         onClick={handleAdd}
         className="absolute right-4 bg-zinc-700 px-4 rounded-md hover:bg-zinc-300 hover:text-black"
       >
         Add
-      </button>
+      </button> */}
     </div>
   );
 }

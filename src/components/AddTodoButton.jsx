@@ -14,6 +14,12 @@ export default function AddTodoButton() {
     setTitle("");
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      addTodo();
+    }
+  }
+
   return (
     <div className="absolute bottom-12 w-full flex items-center rounded-xl shadow-custom">
       <input
@@ -23,6 +29,7 @@ export default function AddTodoButton() {
         onChange={(e) => {
           setTitle(e.target.value);
         }}
+        onKeyDown={handleKeyDown}
       ></input>
       <button
         onClick={() => {
