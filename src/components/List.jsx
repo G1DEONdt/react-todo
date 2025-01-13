@@ -45,6 +45,13 @@ export default function List(props) {
       setSelectedList(selectedList);
     }
   }
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      updateTitle();
+    }
+  }
+
   return (
     <button
       onClick={selectList}
@@ -57,19 +64,16 @@ export default function List(props) {
         <div className="relative">
           <input
             autoFocus
+            maxLength={18}
+            placeholder="New title..."
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="bg-transparent rounded-md text-white px-2"
+            className="bg-transparent rounded-md text-white focus:outline-none"
             onBlur={() => {
               updateTitle();
             }}
+            onKeyDown={handleKeyDown}
           ></input>
-          <button
-            onClick={updateTitle}
-            className="absolute right-0 bg-zinc-900 px-5 rounded-md"
-          >
-            +
-          </button>
         </div>
       ) : (
         <>

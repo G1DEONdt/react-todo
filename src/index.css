@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 .list-item {
-  @apply w-full bg-zinc-800 rounded-xl text-zinc-50 text-xl flex justify-between items-center px-6 py-4;
+  @apply w-full bg-zinc-800 rounded-xl text-zinc-50 text-xl flex justify-between items-center px-6 py-2;
 }
 
 .list-item.selected {
-  @apply shadow-[inset_0px_0px_4px_4px_rgba(0,0,0,1)];
+  @apply shadow-[inset_0px_0px_4px_2px_rgba(0,0,0,0.75)];
 }
 
 .todo-item {

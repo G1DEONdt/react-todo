@@ -40,12 +40,6 @@ export default function NewListInput(props) {
           props.setCreatingNewList(false);
         }}
       ></input>
-      {/* <button
-        onClick={handleAdd}
-        className="absolute right-4 bg-zinc-700 px-4 rounded-md hover:bg-zinc-300 hover:text-black"
-      >
-        Add
-      </button> */}
     </div>
   );
 }

@@ -33,7 +33,7 @@ function App() {
           <ListCollection />
         </div>
         <div className="w-full flex-1 flex justify-center py-16">
-          <div className="w-3/5 flex flex-col gap-6 relative">
+          <div className="w-3/5 max-w-screen-md flex flex-col gap-6 relative">
             <TodoList />
           </div>
         </div>

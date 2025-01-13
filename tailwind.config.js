@@ -7,13 +7,14 @@ export default {
         custom: "4px 4px 4px 2px black",
       },
       keyframes: {
-        radialPulse: {
-          "0%": { transform: "scale(0)", opacity: "0.8" },
-          "100%": { transform: "scale(100)", opacity: "0" },
+        fade: {
+          "0%": { opacity: "1" },
+          "30%": { opacity: "0" },
+          "100%": { opacity: "0" },
         },
       },
       animation: {
-        "pulse-radial": "radialPulse 1s linear",
+        fade: "fade 0.4s ease-out forwards",
       },
     },
   },
