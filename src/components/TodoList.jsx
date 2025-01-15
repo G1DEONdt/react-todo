@@ -34,7 +34,7 @@ export default function TodoList() {
     <>
       {!isEditing ? (
         <h1
-          className="text-4xl text-zinc-50 text-center"
+          className="text-4xl text-zinc-300 text-center hover:cursor-pointer"
           onDoubleClick={() => {
             editList();
           }}
@@ -48,7 +48,7 @@ export default function TodoList() {
             setTitle(e.target.value);
           }}
           placeholder="Enter new title..."
-          className="px-4 py-2 rounded-lg bg-zinc-700 text-zinc-50 text-xl"
+          className="mx-auto w-1/2 px-4 rounded-lg text-zinc-300 text-4xl text-center bg-transparent focus:outline-none"
           autoFocus
           onKeyDown={handleKeyDown}
           onBlur={() => {

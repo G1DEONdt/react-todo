@@ -5,7 +5,7 @@ import { ListContext } from "../App";
 import Todo from "./Todo";
 
 export default function CompletedTodoList() {
-  const { lists, setLists, selectedList } = useContext(ListContext);
+  const { lists, selectedList } = useContext(ListContext);
   const [displayCompleted, setDisplayCompleted] = useState(false);
 
   function toggle() {
@@ -15,16 +15,10 @@ export default function CompletedTodoList() {
   return (
     <div>
       <div className="flex items-center gap-4 text-zinc-300 text-xl">
-        <p className="">Completed</p>
-        {displayCompleted ? (
-          <button onClick={toggle}>
-            <IoIosArrowDown />
-          </button>
-        ) : (
-          <button onClick={toggle}>
-            <IoIosArrowForward />
-          </button>
-        )}
+        <button onClick={toggle} className="flex items-center gap-4">
+          <p className="">Completed</p>
+          {displayCompleted ? <IoIosArrowDown /> : <IoIosArrowForward />}
+        </button>
         <hr className="flex-grow"></hr>
       </div>
       {displayCompleted ? (
