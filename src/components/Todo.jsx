@@ -10,7 +10,8 @@ export default function Todo(props) {
 
   function checkTodo() {
     setAnimate(true);
-    lists[selectedList].todos.splice(props.index, 1);
+    // lists[selectedList].todos.splice(props.index, 1);
+    lists[selectedList].todos[props.index].checked = true;
     setTimeout(() => {
       setAnimate(false);
       setLists((l) => [...l]);

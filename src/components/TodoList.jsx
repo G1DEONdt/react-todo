@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { ListContext } from "../App";
 import Todo from "./Todo";
 import AddTodoButton from "./AddTodoButton";
+import CompletedTodoList from "./CompletedTodoList";
 
 export default function TodoList() {
   const { lists, setLists, selectedList } = useContext(ListContext);
@@ -59,8 +60,10 @@ export default function TodoList() {
       <hr></hr>
       <div className="flex flex-col gap-6 w-full h-4/6 overflow-auto hide-scrollbar px-2">
         {lists[selectedList]?.todos.map((todo, index) => {
+          if (todo.checked) return;
           return <Todo key={index} title={todo.title} index={index} />;
         })}
+        <CompletedTodoList />
       </div>
       <AddTodoButton />
     </>
