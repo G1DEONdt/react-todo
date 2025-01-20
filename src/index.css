@@ -11,5 +11,5 @@
 }
 
 .todo-item {
-  @apply w-full bg-zinc-700 rounded-xl px-12 py-6 flex justify-between shadow-custom text-xl;
+  @apply w-full h-20 bg-zinc-700 rounded-xl px-8 py-6 flex justify-between items-center shadow-custom text-xl;
 }

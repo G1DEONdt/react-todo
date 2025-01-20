@@ -49,7 +49,7 @@ export default function Todo(props) {
 
   return (
     <div
-      className={`todo-item text-zinc-50 relative overflow-hidden flex-shrink-0 ${
+      className={`todo-item text-zinc-300 relative overflow-hidden flex-shrink-0 ${
         animate ? "animate-fade" : ""
       }`}
       onDoubleClick={() => {
@@ -72,7 +72,7 @@ export default function Todo(props) {
         <p>{props.title}</p>
       )}
 
-      <div className="flex items-center gap-6 text-2xl">
+      <div className="flex items-center gap-10 text-2xl">
         <button
           onClick={toggleChecked}
           onMouseEnter={() => setHoverCheck(true)}
